@@ -1,0 +1,41 @@
+﻿@model MMPS.DATA.Graphic
+
+
+
+    <div>
+        <h4>Graphic</h4>
+        <hr />
+        <h3 class="h3">@Html.DisplayFor(model => model.imageName)</h3>
+  
+
+
+
+
+            <img src="@Url.Content("~/Content/Images/Graphics/" + Model.imageSource)" alt="@Model.alt" class="detailIMG" />
+     
+
+
+
+
+                @Html.DisplayFor(model => model.description)
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <p>
+        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.imageID })
+        }
+@Html.ActionLink("Back to List", "Index")
+    </p>
+

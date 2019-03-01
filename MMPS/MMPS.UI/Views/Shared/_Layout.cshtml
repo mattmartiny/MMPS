@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Martiny ~ "Anything But Dry"</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/responsiveslides.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })*@
+
+
+
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
+                    <li>@Html.ActionLink("Web Sites", "Index", "WebSites")</li>
+                    <li>@Html.ActionLink("Graphics", "Index", "Graphics")</li>
+                    <li>@Html.ActionLink("Logos", "Index", "Logoes")</li>
+                    <li>@Html.ActionLink("Code", "Index", "Code")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+
+
+
+
+
+                </ul>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    @Html.Partial("_LoginPartial")
+                }
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div id="siteHead">
+        <img src="~/Content/Images/MattLogo.gif" alt="Matt Martiny Logo" class="MMlogo" />
+        <div class="SiteText">
+            <div class="SiteName">
+                Matt Martiny
+            </div>
+            <div class="SiteTagline">
+                &quot;Anything but Dry&quot;
+            </div>
+
+        </div>
+
+        <div class="social">
+        <a href="https://www.facebook.com/mattmartiny/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/MattMartiny" target="_blank"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.linkedin.com/in/mattmartiny/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Matt Martiny</p>
+            <div class="social-foot">
+                <a href="https://www.facebook.com/mattmartiny/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/MattMartiny" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.linkedin.com/in/mattmartiny/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="~/Scripts/responsiveslides.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".rslides").responsiveSlides({
+                auto: true,
+                timeout: 3000,
+                speed: 500,
+                pause: true,
+                maxwidth: "600",
+            });
+
+        });
+    </script>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <div id="adminLink" onclick="openNav()" class="button">
+            <span class="vertical-text">
+                ADMIN
+            </span>
+        </div>
+
+    }
+        <div id="adminSideNav" class="sideNav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+
+                @Html.ActionLink("Roles Admin", "Index", "RolesAdmin")
+                @Html.ActionLink("Users Admin", "Index", "UsersAdmin")
+            }
+
+        </div>
+
+        <script type="text/javascript">
+            function openNav() {
+                //Expand navigation menu
+                document.getElementById('adminSideNav').style.width = "250px";
+                //hide admin button
+                document.getElementById('adminLink').style.display = "none";
+            }
+
+            function closeNav() {
+                document.getElementById('adminSideNav').style.width = "0";
+                document.getElementById('adminLink').style.display = "block";
+            }
+        </script>
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

@@ -1,0 +1,19 @@
+﻿
+
+@model MMPS.UI.Models.ContactViewModel
+
+@{
+         ViewBag.Title = "Contact Confirmation";
+}
+
+
+
+<div style="margin-left:15%;">
+    <p>Thank you for contacting us @Model.Name! We will get back with you as soon as possible! Message details below.</p>
+
+    Name: @Model.Name <br />
+    Email: @Model.Email<br />
+    Subject: @Model.Subject<br />
+    Message: @Model.Message
+
+</div>

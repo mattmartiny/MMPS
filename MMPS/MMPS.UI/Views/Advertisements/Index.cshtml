@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MMPS.DATA.Advertisement>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.imageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.imageSource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.typeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.alt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Graphic.imageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type.typeName)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.imageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.imageSource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.typeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.alt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Graphic.imageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type.typeName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.imageID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.imageID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.imageID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

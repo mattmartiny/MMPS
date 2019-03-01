@@ -1,0 +1,325 @@
+﻿
+
+
+
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+/* field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}*/
+
+.icon-bar{
+
+    background-color:#fff;
+}
+.validation-summary-valid {
+    display: none;
+}
+.sideNav {
+    height: 100%;
+    width: 0; /* - This will be changed with JS */
+    position: fixed; /* stay in place in the window */
+    top: 0;
+    left: 0;
+    background:#222;
+    overflow-x: hidden; /* stops content from bleeding over 
+        the edge of the container
+    */
+    transition: .5s;
+    padding-top: 60px;
+    z-index: 555555;
+}
+
+    /* navigation menu links */
+    .sideNav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #000;
+        font-weight: bolder;
+        -webkit-text-stroke: .25px white;
+        display: block;
+        transition: .3s;
+    }
+
+        .sideNav a:hover {
+            color: #fff;
+            -webkit-text-stroke: white;
+        }
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    /*
+        !important means this will override any conflicting styles
+    */
+    margin-left: 50px;
+}
+
+
+.button {
+    font-family: sans-serif;
+    background:#222;
+    height: 100%;
+    width: 35px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 555555;
+}
+
+.vertical-text {
+    position: absolute;
+    top: 50px;
+    left: 5px;
+    color: #fff;
+    font-weight: bolder;
+    writing-mode: vertical-lr;
+}
+
+
+.navbar {
+    border: none;
+    background-color: #222;
+    }
+
+    .navbar li a {
+        color: #FFF;
+        font-family: 'Eczar', serif;
+    }
+        .navbar li a:hover {
+            color: #222;
+        }
+#siteHead {
+    float: left;
+    width: 100%;
+    background-color:#222;
+    margin-bottom:2em;
+
+
+}
+.MMlogo{
+width:15%;
+float:left;
+margin:.25em 6%;
+}
+.SiteText {
+    float: left;
+    margin: 2.5em 2.5%;
+    font-family: 'Eczar', serif;
+}
+.SiteName{
+font-size:350%;
+color:#fff;
+}
+.SiteTagline{
+font-size:250%;
+color:#fff;
+}
+
+.social {
+    color: #fff;
+    font-size: 1.75em;
+    width: 80%;
+    text-align: center;
+}
+.social i{
+    padding:1%;
+
+}
+.social-foot{
+    font-size:1.25em;
+    width:50%;
+    float:left;
+}
+
+.social-foot i {
+    padding: .25%;
+}
+.folio-item{
+   width:100%;
+   float:left;
+   padding:.25em 5% 3em 5%;
+   text-align:center;
+   margin:1em 0;
+   border:2px solid black;
+ 
+}
+.folio-img-contain {
+   height:30em;
+    margin: 1em 0;
+    float:left;
+    object-fit:cover;
+}
+.folio-img {
+    width: 100%;
+    margin: 1em auto;
+    float: left;
+    object-fit: contain;
+    height:30em;
+}
+.description {
+    height: 95px;
+    text-align: center;
+    float: left;
+    width:100%;
+}
+.title {
+    height: 50px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.slider-bg{
+float:left;
+width:100%;
+
+}
+
+.detailIMG{
+   margin:0 auto;
+   max-width:80%;
+}
+.business {
+    float: left;
+width: 12.5%;
+    padding: 0;
+}
+
+footer{
+float:left;
+width:100%;
+margin:1.5em;
+
+}
+footer p{
+    float:left;
+    text-align:right;
+    width:50%;
+    padding:.25% 1% 0 1%;
+}
+
+.home-content{
+    float:left;
+    width:90%;
+   margin: 1.5em 5% 1em 5%;
+   text-align:justify;
+}
+
+hgroup{
+   margin:0 8%;    
+}
+.about{
+    width:80%;
+    text-align:justify;
+    margin:0 auto;
+    float:left;
+    line-height:2em;
+}
+
+
+.contact-form {
+    margin: 0 auto;
+    width: 100%;
+}.r-title{
+     color:forestgreen;
+     font-weight:bold;
+
+
+ }
+#Resume ul {
+    list-style-image:url('Images/bulletpoint.png');
+}
+.aboutPic{
+    width:250px;
+    padding:2.5px
+}
+
+.codeTable tr, td, th{
+
+    border:1px solid black;
+    padding:2.5px;
+}
+
+@media only screen and (max-width: 399px) {
+    .slider-bg {
+        width: 100%;
+     
+    }
+
+    .rslides {
+        height: 100%;
+        /*width: 70%!important;*/
+       margin:0!important;
+        padding:.25em !important;
+        vertical-align:bottom !important;
+    }
+
+    .business{
+        padding:0;
+        width:33.33333333%;
+        float:left;
+    }
+
+    .MMlogo{
+        width:30%;
+    }
+
+    .SiteText{
+        margin:0;
+
+    }
+    p.about{
+        margin:0 10%;
+    }
+
+    .folio-img-contain{
+height:auto;
+
+    }
+
+
+    .title, .description{
+        margin:0;
+        height:auto;
+        
+    }
+}

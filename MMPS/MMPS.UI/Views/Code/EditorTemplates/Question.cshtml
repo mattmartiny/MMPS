@@ -1,0 +1,18 @@
+﻿@model MMPS.UI.Models.CodeModel.Question
+
+
+<div>
+    @Html.HiddenFor(x => x.ID)
+
+       
+   <h2 class="h2">@Model.question</h2>
+
+    @foreach (var a in Model.Answers)
+    {
+        <p>
+         @Html.RadioButtonFor(b => b.SelectedAnswer, a.ID) @a.answer
+        </p>
+
+
+    }
+</div>

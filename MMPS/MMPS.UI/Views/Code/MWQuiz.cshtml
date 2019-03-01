@@ -1,0 +1,49 @@
+﻿@model MMPS.UI.Models.CodeModel.Evaluation
+
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(x=>x.Questions)
+    <br />
+    <input type="submit" />
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@using (Ajax.BeginForm("_QuizResult", "Code", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace }))
+    {
+
+        foreach (var item in Model)
+        {
+            <p>@item.question</p>
+            <p>@Html.RadioButton(item.a, item.a) @item.a</p>
+            <p>@Html.RadioButton(item.b, item.b) @item.b</p>
+            <p>@Html.RadioButton(item.c, item.c) @item.c</p>
+            <p>@Html.RadioButton(item.d, item.d) @item.d</p>
+            <br />
+            <br />
+
+        }
+
+        <input type="submit" name="Submit" value="Submit" />
+    }*@
+
+
